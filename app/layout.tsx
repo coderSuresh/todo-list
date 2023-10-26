@@ -6,15 +6,17 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Todo List',
-  description: 'A simple todo list app built with Next.js, Tailwindcss, TypeScript, and MongoDB by web developer codersuresh.',
+  description: 'A simple todo list app built with Next.js, Tailwindcss, TypeScript, and MongoDB by developer codersuresh.',
 }
 
-export default function RootLayout({
-  children,
-}: ChildrenProps) {
+const RootLayout = ({ children }: ChildrenProps) => {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+      </body>
     </html>
   )
 }
+
+export default RootLayout
