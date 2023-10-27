@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const Home = () => {
   return (
-    <main className="bg-card-bg h-screen">
+    <main className="bg-bg h-screen">
       <div
         className="fixed md:bg-desktop-light bg-mobile-light 
         bg-no-repeat bg-cover w-full 
@@ -37,7 +37,7 @@ const Home = () => {
           </form>
         </div>
 
-        <div className="bg-card-bg relative rounded-md shadow-lg py-2 mt-8">
+        <div className="bg-card-bg relative rounded-md shadow-md py-2 mt-8 mb-10">
 
           <ListItem id={'1'} content='This is demo one' />
           <ListItem id={'2'} content='This is demo two' />
@@ -50,6 +50,8 @@ const Home = () => {
         </div>
 
       </section>
+
+      <p className="text-grayish-text text-center md:mt-0 pb-10 mt-20">Drag and drop yo reorder list</p>
 
     </main>
   )
