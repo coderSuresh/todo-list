@@ -6,7 +6,7 @@
     --bright-blue: hsl(220, 98%, 61%);
     --check-bg: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
     --bg: hsl(0, 0%, 98%);
-    --card-bg: hsl(236, 33%, 92%);
+    --divider: hsl(236, 33%, 92%);
     --grayish-text: hsl(236, 9%, 61%);
     --text-color: hsl(235, 19%, 35%);
 }
@@ -20,6 +20,8 @@
 }
 
 body {
+    background-color: var(--bg);
+    color: var(--text-color);
     max-width: 1440px;
     margin: 0 auto;
 }

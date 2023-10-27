@@ -8,10 +8,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'bright-blue': 'var(--bright-blue)',
+        'check-bg': 'var(--check-bg)',
+        'bg': 'var(--bg)',
+        'card-bg': 'var(--card-bg)',
+        'grayish-text': 'var(--grayish-text)',
+        'text-color': 'var(--text-color)',
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'desktop-dark': 'url("/images/bg-desktop-dark.jpg")',
+        'mobile-dark': 'url("/images/bg-mobile-dark.jpg")',
+        'desktop-light': 'url("/images/bg-desktop-light.jpg")',
+        'mobile-light': 'url("/images/bg-mobile-light.jpg")',
       },
     },
   },
