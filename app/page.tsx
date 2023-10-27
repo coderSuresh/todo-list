@@ -11,7 +11,7 @@ const Home = () => {
         md:h-72 h-60"
       />
 
-      <section className="container relative max-w-lg mx-auto p-5">
+      <section className="container relative max-w-2xl mx-auto p-5">
 
         <div className="flex items-center justify-between sm:pt-16 pt-8">
           <h1 className="uppercase tracking-widest md:text-4xl text-2xl font-bold text-white">
