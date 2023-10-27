@@ -26,7 +26,7 @@ body {
     margin: 0 auto;
 }
 
-.todo_checkbox:checked+label {
+.todo_checkbox:checked~.todo_content {
     text-decoration: line-through;
     color: var(--grayish-text);
 }
