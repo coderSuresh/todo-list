@@ -8,10 +8,10 @@ const ListItem = ({ id, content }: ListItemProps) => {
           <input
             id={id}
             type="checkbox"
-            className="todo_checkbox h-0 cursor-pointer
+            className="todo_checkbox appearance-none h-0 cursor-pointer
                 before:h-6 before:w-6 before:rounded-full
                 before:border before:border-divider
-                before:absolute before:top-1/2 before:-translate-y-1/2 mr-5
+                before:absolute before:top-1/2 before:-translate-y-1/2 mr-8
                 before:checked:bg-check-bg before:checked:group-hover:border-divider
                 before:checked:content-tick before:z-20
                 group-hover:before:border-transparent group-hover:bg-transparent
