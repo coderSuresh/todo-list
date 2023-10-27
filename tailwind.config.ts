@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         'bright-blue': 'var(--bright-blue)',
         'bg': 'var(--bg)',
+        'divider': 'var(--divider)',
         'card-bg': 'var(--card-bg)',
         'grayish-text': 'var(--grayish-text)',
         'text-color': 'var(--text-color)',
