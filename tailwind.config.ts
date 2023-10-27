@@ -15,6 +15,7 @@ const config: Config = {
         'card-bg': 'var(--card-bg)',
         'grayish-text': 'var(--grayish-text)',
         'text-color': 'var(--text-color)',
+        'text-hovered': 'var(--text-hovered)',
       },
       backgroundImage: {
         'check-bg': 'linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));',
