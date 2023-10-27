@@ -10,18 +10,21 @@ const config: Config = {
     extend: {
       colors: {
         'bright-blue': 'var(--bright-blue)',
-        'check-bg': 'var(--check-bg)',
         'bg': 'var(--bg)',
         'card-bg': 'var(--card-bg)',
         'grayish-text': 'var(--grayish-text)',
         'text-color': 'var(--text-color)',
       },
       backgroundImage: {
+        'check-bg': 'linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));',
         'desktop-dark': 'url("/images/bg-desktop-dark.jpg")',
         'mobile-dark': 'url("/images/bg-mobile-dark.jpg")',
         'desktop-light': 'url("/images/bg-desktop-light.jpg")',
         'mobile-light': 'url("/images/bg-mobile-light.jpg")',
       },
+      content: {
+        'tick': 'url("/images/icon-check.svg")',
+      }
     },
   },
   plugins: [],

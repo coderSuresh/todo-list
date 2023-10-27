@@ -25,15 +25,26 @@ const Home = () => {
         <div className="bg-white rounded-md shadow-lg px-5 py-2 mt-8">
           <form className="flex items-center relative">
             <input
-              type="radio"
-              className="mr-4 h-0 before:absolute before:top-2 before:w-5 before:h-5 before:border before:border-divider before:rounded-full"
+              type="checkbox"
+              className="mr-5 h-0 before:absolute before:top-2 before:w-6 before:h-6 before:border before:border-divider before:rounded-full"
               disabled
             />
             <input
               type="text"
               placeholder="Create a new todo..."
-              className="w-full py-2 text-sm  focus:outline-none"
+              className="w-full py-2 focus:outline-none"
             />
+          </form>
+        </div>
+
+        <div className="bg-white rounded-md shadow-lg px-5 py-2 mt-8">
+          <form className="flex items-center py-2 relative">
+            <input
+              id="item1"
+              type="checkbox"
+              className="todo_checkbox mr-5 h-0 cursor-pointer checked:before:content-tick checked:before:bg-check-bg before:absolute before:top-2 before:flex before:items-center before:justify-center before:w-6 before:h-6 before:border before:border-divider before:rounded-full"
+            />
+            <label htmlFor="item1" className="cursor-pointer">This is demo todo item.</label>
           </form>
         </div>
 
