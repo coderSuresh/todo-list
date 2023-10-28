@@ -8,7 +8,7 @@ const ListControls = () => {
                 <p>5 items left</p>
             </div>
 
-            <div className='flex md:w-fit w-full gap-3 font-bold md:mt-0 md:static absolute mt-36 md:shadow-none shadow-md left-0 right-0 rounded-md bg-card-bg md:py-0 py-4 px-5 justify-center'>
+            <div className='flex md:w-fit gap-3 font-bold md:mt-0 md:static absolute mt-36 md:shadow-none shadow-md w-[calc(100%-40px)] left-5 right-5 rounded-md bg-card-bg md:py-0 py-4 px-5 justify-center'>
                 <button className='text-bright-blue hover:text-text-hovered'>All</button>
                 <button className='hover:text-text-hovered'>Active</button>
                 <button className='hover:text-text-hovered'>Completed</button>
