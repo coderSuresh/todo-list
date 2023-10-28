@@ -19,8 +19,6 @@ const ListItem = ({ id, content, completed, todos }: ListItemProps) => {
   const deleteItem = () => {
     setAnimating([id])
 
-    console.log(animating)
-
     setTimeout(() => {
       const newTodos = todos.filter(todo => todo.id !== Number(id))
       localStorage.setItem('todos', JSON.stringify(newTodos))
