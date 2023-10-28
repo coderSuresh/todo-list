@@ -23,7 +23,7 @@ const ListItem = ({ id, content, completed, todos }: ListItemProps) => {
   return (
     <>
       <div className="todo_item flex items-center justify-between w-full group px-5 py-2 relative">
-        <div>
+        <div className='flex items-center w-full'>
           <input
             onChange={handleChange}
             id={id}
@@ -51,7 +51,7 @@ const ListItem = ({ id, content, completed, todos }: ListItemProps) => {
                 "
           />
 
-          <label htmlFor={id} className="todo_content cursor-pointer">
+          <label htmlFor={id} className="todo_content flex-1 cursor-pointer">
             {content}
           </label>
         </div>
