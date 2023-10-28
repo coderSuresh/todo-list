@@ -5,6 +5,7 @@ type ChildrenProps = {
 type ListItemProps = {
     id: string,
     content: string,
+    completed: boolean,
 }
 
 type TodoType = {

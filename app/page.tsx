@@ -1,11 +1,11 @@
 import BackgroundImage from "@/components/BackgroundImage"
 import DarkModeToggler from "@/components/DarkModeToggler"
 import Form from "@/components/Form"
-import ListControls from "@/components/ListControls"
-import ListItem from "@/components/ListItem"
+import TodosContents from "@/components/TodosContents"
 import ThemeProvider from "@/provider/ThemeProvider"
 
 const Home = () => {
+
   return (
     <ThemeProvider>
       <main className="bg-bg h-screen">
@@ -27,17 +27,7 @@ const Home = () => {
             <Form />
           </div>
 
-          <div className="bg-card-bg relative rounded-md shadow-md py-2 mt-8 mb-10">
-
-            <ListItem id={'1'} content='This is demo one' />
-            <ListItem id={'2'} content='This is demo two' />
-            <ListItem id={'3'} content='This is demo three' />
-            <ListItem id={'4'} content='This is demo four' />
-            <ListItem id={'5'} content='This is demo five' />
-
-            <ListControls />
-
-          </div>
+          <TodosContents />
 
         </section>
 
