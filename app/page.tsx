@@ -1,5 +1,6 @@
 import BackgroundImage from "@/components/BackgroundImage"
 import DarkModeToggler from "@/components/DarkModeToggler"
+import Form from "@/components/Form"
 import ListControls from "@/components/ListControls"
 import ListItem from "@/components/ListItem"
 import ThemeProvider from "@/provider/ThemeProvider"
@@ -23,16 +24,7 @@ const Home = () => {
           </div>
 
           <div className="bg-card-bg rounded-md shadow-lg px-5 py-2 mt-8">
-            <form className="flex items-center relative">
-              <div
-                className="mr-2 w-6 h-6 aspect-square rounded-full border border-divider"
-              />
-              <input
-                type="text"
-                placeholder="Create a new todo..."
-                className="w-full py-2 focus:outline-none"
-              />
-            </form>
+            <Form />
           </div>
 
           <div className="bg-card-bg relative rounded-md shadow-md py-2 mt-8 mb-10">
