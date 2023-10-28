@@ -1,6 +1,8 @@
 import React from 'react'
+import ClearAllCompletedBtn from './ClearAllCompletedBtn'
 
-const ListControls = ({ len }: { len: number }) => {
+const ListControls = ({ len, todos }: ListControlProps) => {
+
     return (
         <div className='flex px-5 py-2 justify-between items-center text-sm text-grayish-text'>
 
@@ -15,9 +17,7 @@ const ListControls = ({ len }: { len: number }) => {
             </div>
 
             <div>
-                <button className='hover:text-text-hovered'>
-                    Clear Completed
-                </button>
+                <ClearAllCompletedBtn todos={todos} />
             </div>
 
         </div>

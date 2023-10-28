@@ -14,3 +14,8 @@ type TodoType = {
     content: string,
     completed: boolean
 }
+
+type ListControlProps = {
+    len: number,
+    todos: TodoType[],
+}
