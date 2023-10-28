@@ -6,10 +6,14 @@ import { ThemeContext } from '@/context/ThemeContext'
 
 const DarkModeToggler = () => {
 
-    const { toggleTheme } = React.useContext(ThemeContext)
+    const { theme, toggleTheme } = React.useContext(ThemeContext)
 
-    const [darkMode, setDarkMode] = React.useState(false)
-    const [darkModeIcon, setDarkModeIcon] = React.useState('/images/icon-sun.svg')
+    const [darkMode, setDarkMode] = React.useState(theme === 'dark')
+    const [darkModeIcon, setDarkModeIcon] = React.useState('')
+
+    React.useEffect(() => {
+        toggleDarkMode(setDarkMode)
+    }, [])
 
     React.useEffect(() => {
         if (darkMode) {
@@ -22,8 +26,8 @@ const DarkModeToggler = () => {
     }, [darkMode])
 
     return (
-        <button aria-label='toggle dark mode' onClick={() => toggleDarkMode(darkMode, setDarkMode)}>
-            <Image src={darkModeIcon} width={30} height={30} alt='dark mode icon' />
+        <button aria-label='toggle dark mode' onClick={() => toggleDarkMode(setDarkMode)}>
+            <Image src={darkModeIcon ? darkModeIcon : '/images/icon-moon.svg'} width={30} height={30} alt='dark mode icon' />
         </button>
     )
 }
