@@ -1,11 +1,11 @@
 import React from 'react'
 
-const ListControls = () => {
+const ListControls = ({ len }: { len: number }) => {
     return (
         <div className='flex px-5 py-2 justify-between items-center text-sm text-grayish-text'>
 
             <div>
-                <p>5 items left</p>
+                <p>{len} items left</p>
             </div>
 
             <div className='flex md:w-fit gap-3 font-bold md:mt-0 md:static absolute mt-36 md:shadow-none shadow-md w-[calc(100%-40px)] left-5 right-5 rounded-md bg-card-bg md:py-0 py-4 px-5 justify-center'>

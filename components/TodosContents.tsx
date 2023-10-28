@@ -47,7 +47,7 @@ const TodosContainer = () => {
                     :
                     <div className="bg-card-bg rounded-md transition-all shadow-md py-2 mt-8 mb-10" >
                         {renderTodos()}
-                        <ListControls />
+                        <ListControls len={todos.filter(todo => !todo.completed).length} />
                     </div>
             }
         </>
