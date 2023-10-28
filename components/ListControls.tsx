@@ -16,10 +16,7 @@ const ListControls = ({ len, todos }: ListControlProps) => {
                 <button className='hover:text-text-hovered'>Completed</button>
             </div>
 
-            <div>
-                <ClearAllCompletedBtn todos={todos} />
-            </div>
-
+            <ClearAllCompletedBtn todos={todos} />
         </div>
     )
 }
