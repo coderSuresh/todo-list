@@ -13,10 +13,10 @@ const DarkModeToggler = () => {
 
     React.useEffect(() => {
         if (darkMode) {
-            setDarkModeIcon('/images/icon-moon.svg')
+            setDarkModeIcon('/images/icon-sun.svg')
             toggleTheme('dark')
         } else {
-            setDarkModeIcon('/images/icon-sun.svg')
+            setDarkModeIcon('/images/icon-moon.svg')
             toggleTheme('light')
         }
     }, [darkMode])
