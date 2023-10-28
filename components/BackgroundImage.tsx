@@ -6,13 +6,13 @@ const BackgroundImage = () => {
 
     const { theme } = React.useContext(ThemeContext)
 
-    const [bgImg, setBgImg] = React.useState('bg-mobile-light')
+    const [bgImg, setBgImg] = React.useState('md:bg-desktop-light bg-mobile-light')
 
     React.useEffect(() => {
         if (theme === 'dark') {
-            setBgImg('bg-mobile-dark')
+            setBgImg('md:bg-desktop-dark bg-mobile-dark')
         } else {
-            setBgImg('bg-mobile-light')
+            setBgImg('md:bg-desktop-light bg-mobile-light')
         }
     }, [theme])
 
