@@ -71,7 +71,7 @@ const ListItem = ({ id, content, completed, todos }: ListItemProps) => {
 
       </div>
 
-      <hr className="my-2" />
+      <hr className="my-2 border-none h-[1px] bg-grayish-text opacity-50" />
     </>
   )
 }
