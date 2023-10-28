@@ -2,6 +2,7 @@ import BackgroundImage from "@/components/BackgroundImage"
 import DarkModeToggler from "@/components/DarkModeToggler"
 import Form from "@/components/Form"
 import TodosContents from "@/components/TodosContents"
+import AnimationProvider from "@/provider/AnimationProvider"
 import ThemeProvider from "@/provider/ThemeProvider"
 import TodoProvider from "@/provider/TodoProvider"
 
@@ -10,6 +11,7 @@ const Home = () => {
   return (
     <ThemeProvider>
       <TodoProvider>
+        <AnimationProvider>
         <main className="bg-bg h-screen">
 
           <BackgroundImage />
@@ -36,6 +38,7 @@ const Home = () => {
           <p className="text-grayish-text text-center md:mt-0 pb-10 mt-20">Drag and drop yo reorder list</p>
 
         </main>
+        </AnimationProvider>
       </TodoProvider>
     </ThemeProvider>
   )

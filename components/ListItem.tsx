@@ -2,10 +2,12 @@
 import React from 'react'
 import Image from 'next/image'
 import { TodoContext } from '@/context/TodoContext'
+import { AnimationContext } from '@/context/AnimationContext'
 
 const ListItem = ({ id, content, completed, todos }: ListItemProps) => {
 
   const { setIsManipulated } = React.useContext(TodoContext)
+  const {animating, setAnimating} = React.useContext(AnimationContext)
 
   const handleChange = () => {
     const todo = todos.find(todo => todo.id === Number(id))
@@ -15,14 +17,23 @@ const ListItem = ({ id, content, completed, todos }: ListItemProps) => {
   }
 
   const deleteItem = () => {
-    const newTodos = todos.filter(todo => todo.id !== Number(id))
-    localStorage.setItem('todos', JSON.stringify(newTodos))
-    setIsManipulated(true)
+    setAnimating([id])
+
+    console.log(animating)
+
+    setTimeout(() => {
+      const newTodos = todos.filter(todo => todo.id !== Number(id))
+      localStorage.setItem('todos', JSON.stringify(newTodos))
+
+      setIsManipulated(true)
+
+      setAnimating([])
+    }, 500)
   }
 
   return (
     <>
-      <div className="todo_item flex items-center justify-between w-full group px-5 py-2 relative">
+      <div className={`${(animating.includes(id)) ? 'animating' : ''} todo_item flex items-center justify-between w-full group px-5 py-2 relative`}>
         <div className='flex items-center w-full'>
           <input
             onChange={handleChange}
