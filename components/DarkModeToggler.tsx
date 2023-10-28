@@ -6,7 +6,7 @@ import { ThemeContext } from '@/context/ThemeContext'
 
 const DarkModeToggler = () => {
 
-    const {theme, toggleTheme } = React.useContext(ThemeContext)
+    const { toggleTheme } = React.useContext(ThemeContext)
 
     const [darkMode, setDarkMode] = React.useState(false)
     const [darkModeIcon, setDarkModeIcon] = React.useState('/images/icon-sun.svg')
