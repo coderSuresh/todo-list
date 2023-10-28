@@ -1,13 +1,34 @@
+'use client'
+import React from 'react'
 import Image from 'next/image'
+import { TodoContext } from '@/context/TodoContext'
 
-const ListItem = ({ id, content }: ListItemProps) => {
+const ListItem = ({ id, content, completed, todos }: ListItemProps) => {
+
+  const { setIsManipulated } = React.useContext(TodoContext)
+
+  const handleChange = () => {
+    const todo = todos.find(todo => todo.id === Number(id))
+    todo!.completed = !todo?.completed
+    localStorage.setItem('todos', JSON.stringify(todos))
+    setIsManipulated(true)
+  }
+
+  const deleteItem = () => {
+    const newTodos = todos.filter(todo => todo.id !== Number(id))
+    localStorage.setItem('todos', JSON.stringify(newTodos))
+    setIsManipulated(true)
+  }
+
   return (
     <>
       <div className="todo_item flex items-center justify-between w-full group px-5 py-2 relative">
         <div>
           <input
+            onChange={handleChange}
             id={id}
             type="checkbox"
+            checked={completed}
             className="todo_checkbox appearance-none h-0 cursor-pointer
                 before:h-6 before:w-6 before:rounded-full
                 before:border before:border-divider
@@ -35,7 +56,7 @@ const ListItem = ({ id, content }: ListItemProps) => {
           </label>
         </div>
 
-        <button className="group-hover:block hidden" aria-label="delete todo item">
+        <button onClick={deleteItem} className="group-hover:block hidden" aria-label="delete todo item">
           <Image src='/images/icon-cross.svg' height={15} width={15} alt="" />
         </button>
 

@@ -6,6 +6,7 @@ type ListItemProps = {
     id: string,
     content: string,
     completed: boolean,
+    todos: TodoType[],
 }
 
 type TodoType = {

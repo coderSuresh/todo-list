@@ -1,4 +1,5 @@
 'use client'
+import { TodoContext } from '@/context/TodoContext'
 import React from 'react'
 
 const Form = () => {
@@ -6,10 +7,13 @@ const Form = () => {
     const [todo, setTodo] = React.useState('')
     const [todos, setTodos] = React.useState<TodoType[]>([])
 
+    const { isManipulated, setIsManipulated } = React.useContext(TodoContext)
+
     React.useEffect(() => {
+        setIsManipulated(false)
         const todos = JSON.parse(localStorage.getItem('todos') || '[]')
         setTodos(todos)
-    }, [])
+    }, [isManipulated])
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -24,6 +28,7 @@ const Form = () => {
 
         todos.unshift(newTodo)
         localStorage.setItem('todos', JSON.stringify(todos))
+        setIsManipulated(true)
 
         setTodo('')
     }
