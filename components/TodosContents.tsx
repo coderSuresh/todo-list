@@ -3,20 +3,30 @@ import React from 'react'
 import ListItem from './ListItem'
 import ListControls from './ListControls'
 import { TodoContext } from '@/context/TodoContext'
+import { FilterContext } from '@/context/FilterContext'
 
 const TodosContainer = () => {
 
     const [todos, setTodos] = React.useState<TodoType[]>([])
     const [loading, setLoading] = React.useState(true)
+    const [filteredTodos, setFilteredTodos] = React.useState<TodoType[]>([])
 
     const { isManipulated, setIsManipulated } = React.useContext(TodoContext)
+    const { filter, setFilter } = React.useContext(FilterContext)
 
     React.useEffect(() => {
+        setFilter('all')
         setIsManipulated(false)
         const todos = JSON.parse(localStorage.getItem('todos') || '[]')
         setTodos(todos)
         setLoading(false)
     }, [isManipulated])
+
+    React.useEffect(() => {
+        if (filter === 'active') setFilteredTodos(todos.filter(todo => !todo.completed))
+        else if (filter === 'completed') setFilteredTodos(todos.filter(todo => todo.completed))
+        else setFilteredTodos(todos)
+    }, [filter, todos])
 
     const renderTodos = () => {
 
@@ -24,7 +34,9 @@ const TodosContainer = () => {
             return <p className="text-center text-grayish-text my-10">Nothing to do for now.</p>
         }
 
-        return todos.map(todo => {
+        let todosWithContent = filteredTodos.length > 0 ? filteredTodos : todos as TodoType[]
+
+        return todosWithContent.map(todo => {
             return (
                 <ListItem
                     key={todo.id}
