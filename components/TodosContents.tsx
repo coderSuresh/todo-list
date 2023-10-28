@@ -32,7 +32,7 @@ const TodosContainer = () => {
 
         if (todos.length <= 0 || filteredTodos.length <= 0) {
             return <p className="text-center text-grayish-text my-10">
-                Nothing {filter === 'completed' ? ' is completed yet.' : ' to do today.'}.
+                Nothing {filter === 'completed' ? ' is completed yet.' : ' to do today.'}
             </p>
         }
 
