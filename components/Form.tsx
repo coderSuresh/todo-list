@@ -43,7 +43,7 @@ const Form = () => {
                 onChange={(e) => setTodo(e.target.value)}
                 type="text"
                 placeholder="Create a new todo..."
-                className="w-full bg-transparent py-2 focus:outline-none"
+                className="w-full bg-transparent py-2 focus:outline-none caret-bright-blue"
             />
         </form>
     )
