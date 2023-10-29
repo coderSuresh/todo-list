@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import { toggleDarkMode } from '@/utils/toggleDarkMode'
+import { initiallySetDarkMode, toggleDarkMode } from '@/utils/toggleDarkMode'
 import { ThemeContext } from '@/context/ThemeContext'
 
 const DarkModeToggler = () => {
@@ -12,7 +12,7 @@ const DarkModeToggler = () => {
     const [darkModeIcon, setDarkModeIcon] = React.useState('')
 
     React.useEffect(() => {
-        toggleDarkMode(setDarkMode)
+        initiallySetDarkMode(setDarkMode)
     }, [])
 
     React.useEffect(() => {
