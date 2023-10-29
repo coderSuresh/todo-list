@@ -37,3 +37,6 @@ next-env.d.ts
 # style guides
 /public/design
 style-guide.md
+
+# pwa files
+/public/*.js
