@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/codersuresh/todo-list](https://github.com/codersuresh/todo-list)
+- Live Site URL: [https://todo-list-codersuresh.vercel.app](https://todo-list-codersuresh.vercel.app)
 
 ## My process
 
@@ -52,6 +52,8 @@ Users should be able to:
 
 ### What I learned
 
+- To make custom checkbox make sure to use `appearance-none` to remove default checkbox style.
+- To make PWA in next.js using `next-pwa` package.
 
 ### Continued development
 
