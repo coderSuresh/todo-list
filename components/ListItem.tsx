@@ -4,10 +4,22 @@ import Image from 'next/image'
 import { TodoContext } from '@/context/TodoContext'
 import { AnimationContext } from '@/context/AnimationContext'
 
-const ListItem = ({ id, content, completed, todos }: ListItemProps) => {
+const ListItem = (
+  {
+    id,
+    index,
+    content,
+    completed,
+    todos,
+    draggedItem,
+    dragOverItem,
+    handleSort,
+  }
+    : ListItemProps
+) => {
 
   const { setIsManipulated } = React.useContext(TodoContext)
-  const {animating, setAnimating} = React.useContext(AnimationContext)
+  const { animating, setAnimating } = React.useContext(AnimationContext)
 
   const handleChange = () => {
     const todo = todos.find(todo => todo.id === Number(id))
@@ -31,7 +43,14 @@ const ListItem = ({ id, content, completed, todos }: ListItemProps) => {
 
   return (
     <>
-      <div className={`${(animating.includes(id)) ? 'animating' : ''} todo_item flex items-center justify-between w-full group px-5 py-2 relative`}>
+      <div
+        draggable
+        className={`${(animating.includes(id)) ? 'animating' : ''} cursor-grab todo_item flex items-center justify-between w-full group px-5 py-2 relative`}
+        onDragStart={() => draggedItem.current = index}
+        onDragEnter={() => dragOverItem.current = index}
+        onDragEnd={handleSort}
+        onDragOver={e => e.preventDefault()}
+      >
         <div className='flex items-center w-full'>
           <input
             onChange={handleChange}

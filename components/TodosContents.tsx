@@ -28,6 +28,24 @@ const TodosContainer = () => {
         else setFilteredTodos(todos)
     }, [filter, todos])
 
+    // drag and drop functionality
+    const draggedItem = React.useRef(0)
+    const dragOverItem = React.useRef(0)
+
+    const handleSort = () => {
+        const todosCopy = [...todos]
+
+        const draggedTodo = todosCopy.splice(draggedItem.current, 1)[0]
+        todosCopy.splice(dragOverItem.current, 0, draggedTodo)
+
+        setTodos(todosCopy)
+
+        localStorage.setItem('todos', JSON.stringify(todosCopy))
+
+        draggedItem.current = 0
+        dragOverItem.current = 0
+    }
+
     const renderTodos = () => {
 
         if (todos.length <= 0 || filteredTodos.length <= 0) {
@@ -38,14 +56,18 @@ const TodosContainer = () => {
 
         let todosWithContent = filteredTodos.length > 0 ? filteredTodos : todos as TodoType[]
 
-        return todosWithContent.map(todo => {
+        return todosWithContent.map((todo, index) => {
             return (
                 <ListItem
                     key={todo.id}
                     id={todo.id.toString()}
+                    index={index}
                     content={todo.content}
                     completed={todo.completed}
                     todos={todos}
+                    handleSort={handleSort}
+                    dragOverItem={dragOverItem}
+                    draggedItem={draggedItem}
                 />
             )
         })
