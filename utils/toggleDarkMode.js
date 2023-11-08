@@ -1,5 +1,3 @@
-localStorage.getItem('theme')
-
 const setTheme = (theme, setDarkMode) => {
     localStorage.setItem('theme', theme)
     document.documentElement.setAttribute('data-theme', theme)

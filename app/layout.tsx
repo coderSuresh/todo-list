@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Josefin_Sans } from 'next/font/google'
 import './globals.css'
-import Script from 'next/script'
 
 const josefin_sans = Josefin_Sans(
   {
@@ -26,7 +25,6 @@ const RootLayout = ({ children }: ChildrenProps) => {
       
       <body className={josefin_sans.className}>
         {children}
-        <Script src="/utils/toggleDarkMode.js" strategy="beforeInteractive" />
       </body>
     </html>
   )
