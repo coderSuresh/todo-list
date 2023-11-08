@@ -30,7 +30,8 @@ Users should be able to:
 - Filter by all/active/complete todos
 - Clear all completed todos
 - Toggle light and dark mode
-- **Bonus**: Drag and drop to reorder items on the list
+- **I added**: Drag and drop to reorder items on the list
+- **I added**: PWA support to make it installable on any device and work offline using `next-pwa` package.
 
 ### Screenshot
 
@@ -48,7 +49,8 @@ Users should be able to:
 - Next.js 
 - Tailwindcss
 - Typescript
-- MongoDB
+- LocalStorage
+- Next-pwa
 
 ### What I learned
 
